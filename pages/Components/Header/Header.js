@@ -19,7 +19,6 @@ const Header = () => {
              <a className={styles.navLink}>ContactUs</a>   
         </div>
         <div>
-            <button className='py-2 px-6 text-center gradientBackground rounded'>Login In</button>
         </div>
     </div>
   )
