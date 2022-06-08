@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import Logo from './Logo.svg'
+import { ConnectButton } from 'web3uikit'
 const styles = {
     navLink : 'hover:gradientPrimary cursor-pointer font-semibold'
 }
@@ -19,6 +20,7 @@ const Header = () => {
              <a className={styles.navLink}>ContactUs</a>   
         </div>
         <div>
+            <ConnectButton />
         </div>
     </div>
   )
