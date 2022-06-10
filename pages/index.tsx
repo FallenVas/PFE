@@ -4,6 +4,8 @@ import bg from './bg.svg'
 import Image from 'next/image'
 import Hero from './Components/Hero/Hero'
 import MarketTrend from './Components/Market Trend/MarketTrend'
+import CryptoInfo from './Components/CryptoInfo/CryptoInfo'
+import TrendTable from './Components/TrendTable/TrendTable'
 const Home: NextPage = () => {
   return (
     <div>
@@ -15,6 +17,8 @@ const Home: NextPage = () => {
         <Hero />
       </div>
       <MarketTrend />
+      <CryptoInfo/>
+      <TrendTable />
     </div>
   )
 }
