@@ -21,13 +21,13 @@ const TrendItem = ({
       </td>
       <td className={styles.td}>${lastP.toFixed(2)}</td>
       <td className={`${styles.td} ${Change1h > 0 ? 'text-green-500' : 'text-red-500'}`}>
-        {Change1h.toFixed(2)}%
+        {Change1h?Change1h.toFixed(2):0}%
       </td>
       <td className={`${styles.td} ${Change1d > 0 ? 'text-green-500' : 'text-red-500'}`}>
-        {Change1d.toFixed(2)}%
+        {Change1d?Change1d.toFixed(2):0}%
       </td>
       <td className={`${styles.td} ${Change30d > 0 ? 'text-green-500' : 'text-red-500'}`}>
-        {Change30d.toFixed(2)}%
+        {Change30d?Change30d.toFixed(2):0}%
       </td>
       <td className={styles.td}>Stat</td>
       <td className={styles.td}>Trade</td>

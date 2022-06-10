@@ -1,5 +1,4 @@
 import React from 'react'
-import Image from 'next/image'
 import { BsArrowUpRight } from 'react-icons/bs'
 const TrendItem = ({logo , lastP , name,symbol,change1h}) => {
   return (
@@ -19,10 +18,10 @@ const TrendItem = ({logo , lastP , name,symbol,change1h}) => {
           <div className="grid grid-cols-2">
             <div className=' inline-flex flex-col gap-1'>
               <p className="w-36 text-2xl font-medium text-gray-900">
-                ${lastP.toFixed(2)}
+                ${lastP?lastP.toFixed(2):0}
               </p>
               <p className={`w-36 text-lg font-medium leading-7 ${change1h > 0 ? 'text-green-500' : 'text-red-500'}`}>
-                {change1h.toFixed(2)}%
+                {change1h?change1h.toFixed(2):0}%
               </p>
             </div>
           </div>
