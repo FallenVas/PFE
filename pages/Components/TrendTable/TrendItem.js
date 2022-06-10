@@ -19,7 +19,7 @@ const TrendItem = ({
         <img src={logo} alt={name} className="w-12 h-12 mr-3" /> {name}{' '}
         <span className="opacity-20">|</span> {symbol}
       </td>
-      <td className={styles.td}>${lastP.toFixed(2)}</td>
+      <td className={styles.td}>${lastP?lastP.toFixed(2):0}</td>
       <td className={`${styles.td} ${Change1h > 0 ? 'text-green-500' : 'text-red-500'}`}>
         {Change1h?Change1h.toFixed(2):0}%
       </td>
