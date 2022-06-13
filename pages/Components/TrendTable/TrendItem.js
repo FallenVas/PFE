@@ -39,12 +39,12 @@ const TrendItem = ({
   Change30d,
   chartData,
 }) => {
-  const labels = chartData.data.map((item) => item.day + new Date().getTime())
+  const labels = chartData?chartData.data.map((item) => item.day + new Date().getTime()):[]
   const data = {
     labels: labels,
     datasets: [
       {
-        data: chartData.data.map((item) => item.value.toFixed(2)).reverse(),
+        data: chartData?chartData.data.map((item) => item.value.toFixed(2)).reverse():[],
         backgroundColor: Change1d>0?'green':'red',
         borderColor: Change1d>0?'green':'red',
         pointRadius: 0,
