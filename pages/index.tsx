@@ -6,6 +6,7 @@ import Hero from './Components/Hero/Hero'
 import MarketTrend from './Components/Market Trend/MarketTrend'
 import CryptoInfo from './Components/CryptoInfo/CryptoInfo'
 import TrendTable from './Components/TrendTable/TrendTable'
+import Footer from './Components/Footer/Footer'
 const Home: NextPage = () => {
   return (
     <div>
@@ -19,6 +20,7 @@ const Home: NextPage = () => {
       <MarketTrend />
       <CryptoInfo/>
       <TrendTable />
+      <Footer />
     </div>
   )
 }
