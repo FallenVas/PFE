@@ -6,7 +6,10 @@
 *{
   font-family: 'Poppins', sans-serif;
   list-style: none;
+}
+p,h1,h2,h3,h4,h5,h6,ul,li,a,td{
   color: white;
+
 }
 body{
     @apply bg-[#1D1F3B]

@@ -10,8 +10,19 @@ export const CoinmarketProvider = ({children}) => {
             console.log(e.message)
         }
     }
+    const getChartData = async()=>{
+        try {
+            const res = await fetch('/api/getChartData')
+            const data = await res.json()
+            return data
+        } catch (error) {
+            console.log(error.message)
+        }
+            
+        }
+    
     return(
-        <CoinmarketContext.Provider value={{getTopTen}}>
+        <CoinmarketContext.Provider value={{getTopTen , getChartData}}>
             {children}
         </CoinmarketContext.Provider>
     )

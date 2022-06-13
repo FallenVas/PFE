@@ -3,8 +3,9 @@ import { CoinmarketContext } from '../../../context/context'
 import TrendItem from './TrendItem'
 
 const TrendTable = () => {
-  let { getTopTen } = useContext(CoinmarketContext)
+  let { getTopTen , getChartData } = useContext(CoinmarketContext)
   const [topTen, setTopTen] = useState(null)
+  const [chartData, setChartData] = useState(null)
 
   useEffect(() => {
     setData()
@@ -13,11 +14,13 @@ const TrendTable = () => {
   const setData = useCallback(async () => {
     try {
       const apiResponse = await getTopTen()
-      setTopTen(apiResponse.filteredResponse)
+      setTopTen(apiResponse.data)
+      const chartResponse = await getChartData()
+      setChartData(chartResponse)
     } catch (e) {
       console.log(e.message)
     }
-  }, [getTopTen])
+  }, [getTopTen , getChartData])
   return (
     <div className="px-20 mt-10">
       <table className="w-full bg-white bg-opacity-5">
@@ -34,10 +37,11 @@ const TrendTable = () => {
           </tr>
         </thead>
         <tbody>
-          {topTen &&
+          {topTen && chartData?
             topTen.map((item, index) => (
               <TrendItem
-                key={index}
+                chartData={chartData.data[index]}
+                key={index + (new Date().getTime())}
                 number={index + 1}
                 logo={item.image}
                 symbol={item.symbol}
@@ -47,7 +51,7 @@ const TrendTable = () => {
                 Change1d={item.quote.USD.percent_change_24h}
                 Change30d={item.quote.USD.percent_change_30d}
               />
-            ))}
+            )):<></>}
         </tbody>
       </table>
     </div>
