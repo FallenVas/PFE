@@ -2,7 +2,7 @@ import React, { useState, useCallback, useEffect, useContext } from 'react'
 import { CoinmarketContext } from '../../../context/context'
 import TrendItem from './TrendItem'
 
-const TrendTable = () => {
+const TrendTable = (props) => {
   let { getTopTen , getChartData } = useContext(CoinmarketContext)
   const [topTen, setTopTen] = useState(null)
   const [chartData, setChartData] = useState(null)
@@ -13,10 +13,13 @@ const TrendTable = () => {
 
   const setData = useCallback(async () => {
     try {
+      props.setLoading(true)
       const apiResponse = await getTopTen()
       setTopTen(apiResponse.data)
       const chartResponse = await getChartData()
       setChartData(chartResponse)
+      props.setLoading(false)
+
     } catch (e) {
       console.log(e.message)
     }

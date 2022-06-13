@@ -54,7 +54,7 @@ const Footer = () => {
           </div>
           <div className="flex justify-between mt-20">
             <p className="opacity-50 text-base text-white">
-              Copyright, AGAFAY 2022.
+              Copyright, CryptoSwap 2022.
             </p>
             <div className="flex gap-x-5">
               <p className="text-base text-white">Terms & Conditions</p>
