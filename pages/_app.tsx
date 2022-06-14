@@ -2,7 +2,7 @@ import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import { MoralisProvider } from 'react-moralis'
 import { CoinmarketProvider } from '../context/context'
-
+import { GunProvider } from '../context/gunContext'
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <MoralisProvider
@@ -13,9 +13,11 @@ function MyApp({ Component, pageProps }: AppProps) {
         process.env.NEXT_PUBLIC_SERVER ? process.env.NEXT_PUBLIC_SERVER : ''
       }
     >
-      <CoinmarketProvider>
-        <Component {...pageProps} />
-      </CoinmarketProvider>
+      <GunProvider>
+        <CoinmarketProvider>
+          <Component {...pageProps} />
+        </CoinmarketProvider>
+      </GunProvider>
     </MoralisProvider>
   )
 }
