@@ -54,7 +54,7 @@ console.log(gunner )
     const newMessage = {
       sender: faker.name.findName(),
       avatar:
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3OCSMFIW5fZ3vSN6yGpD-w-6SsL2_ZPA_sw&usqp=CAU',
+        'https://i.pravatar.cc/300',
       content: message.trim(),
       isBullish: bullishValue,
       createdAt: Date().substring(4, 11),
@@ -130,7 +130,7 @@ console.log(gunner )
 
       <input
         className={styles.input}
-        placeholder="What's happening on BTC?"
+        placeholder={`What's happening on ${coin? coin.symbol:''}?`}
         value={message}
         onChange={e => setMessage(e.target.value)}
       />
@@ -146,7 +146,7 @@ console.log(gunner )
             key={index}
             sender={message.sender}
             senderUsername={message.username}
-            senderAvatar='https:/encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3OCSMFIW5fZ3vSN6yGpD-w-6SsL2_ZPA_sw&usqp=CAU'
+            senderAvatar='https://i.pravatar.cc/300'
             bullish={message.isBullish}
             timestamp={message.createdAt}
             content={message.content}
