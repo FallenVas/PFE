@@ -29,7 +29,7 @@ const Chat = ({coin}) => {
 const {gunner , getMessages,state} = useContext(GunContext)
 console.log(gunner )
   useEffect(() => {
-    getMessages('GUN_REF_7')
+    getMessages('GUN_REF_153')
   }, [])
 
   const formattedMessagesArray = () => {
@@ -49,7 +49,7 @@ console.log(gunner )
 
   const sendMessage = () => {
     if (message.trim() === '') return
-    const messagesRef = gunner.get('GUN_REF_7')
+    const messagesRef = gunner.get('GUN_REF_153')
 
     const newMessage = {
       sender: faker.name.findName(),
