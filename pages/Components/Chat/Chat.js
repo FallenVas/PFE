@@ -71,7 +71,7 @@ console.log(gunner )
     <div className=' h-screen overflow-y-scroll px-5 py-10'>
       <div className={styles.chat}>
         <div className={styles.flexBetween}>
-          <p className={styles.boldText}>Live {coin.name} Chat</p>
+          <p className={styles.boldText}>Live {coin?coin.name:''} Chat</p>
           <p className='text-[#6188FF]'>See more</p>
         </div>
 
@@ -81,7 +81,7 @@ console.log(gunner )
           <div className={styles.flexBetween}>
             <div className={styles.flexCenter}>
               <div>
-                <Image alt='' src={coin.image} width={70} height={70} />
+                <Image alt='' src={coin?coin.image:''} width={70} height={70} />
               </div>
               <div className='text-left ml-1 mr-10 text-white'>
                 <b>Cigma</b>
